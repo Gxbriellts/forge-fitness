@@ -1,0 +1,80 @@
+/* FORGE FITNESS - folha de estilo única */
+:root{--grafite:#111111;--escuro:#1C1C1C;--branco:#FFFFFF;--claro:#F2F2F2;--medio:#A3A3A3;--ouro:#C5A46D;--raio:6px;--fonte-titulo:'Barlow Condensed','Arial Narrow',Arial,sans-serif;--fonte-texto:'Source Sans 3',Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fonte-texto);color:var(--grafite);background:var(--branco);line-height:1.7;font-size:1.05rem}
+img{max-width:100%;height:auto;display:block}
+ul,ol{padding-left:1.3rem}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ouro);outline-offset:3px}
+.container{width:min(1120px,92%);margin-inline:auto}
+h1,h2,h3{font-family:var(--fonte-titulo);line-height:1.1;font-weight:600;letter-spacing:.02em}
+h1{font-size:clamp(2.6rem,7vw,5rem);text-transform:uppercase}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:1.2rem}
+.cabecalho{position:sticky;top:0;z-index:10;background:var(--grafite);color:var(--branco)}
+.barra{display:flex;align-items:center;justify-content:space-between;min-height:68px}
+.logo{font-family:var(--fonte-titulo);font-size:1.6rem;font-weight:700;letter-spacing:.12em;text-decoration:none}
+.logo span{color:var(--ouro)}
+.menu{display:flex;gap:1.8rem;list-style:none;padding:0}
+.menu a{text-decoration:none;position:relative;padding:.4rem 0;color:var(--claro)}
+/* ELEMENTO PERSONALIZADO: indicador animado do menu */
+.menu a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--ouro);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.menu a:hover::after,.menu a.ativo::after{transform:scaleX(1)}
+.menu-botao{display:none;background:none;border:1px solid var(--medio);color:var(--branco);padding:.4rem .9rem;border-radius:var(--raio);font:inherit;cursor:pointer}
+/* botões premium */
+.btn{display:inline-block;padding:.85rem 1.7rem;border:0;border-radius:var(--raio);background:linear-gradient(135deg,#d6b980,var(--ouro) 60%,#a98a52);color:var(--grafite);font:600 .95rem var(--fonte-texto);letter-spacing:.06em;text-decoration:none;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(197,164,109,.35);filter:brightness(1.06)}
+.btn-sec{background:transparent;border:1px solid var(--grafite);color:var(--grafite)}
+/* hero */
+.hero{background:linear-gradient(rgba(17,17,17,.55),rgba(17,17,17,.8)),url(../assets/images/hero.svg) center/cover;color:var(--branco);padding:clamp(5rem,16vw,11rem) 0}
+.hero p{font-size:1.3rem;color:var(--claro);margin:1.2rem 0 2rem}
+.hero-pagina{background:var(--escuro);color:var(--branco);padding:4rem 0 3rem;border-bottom:3px solid var(--ouro)}
+.hero-pagina p{color:var(--medio);margin:1rem 0 0}
+/* seções */
+.secao{padding:4.5rem 0}
+.fundo-claro{background:var(--claro)}
+.duas-colunas{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.grade-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.grade-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem}
+.card,.beneficio{background:var(--branco);border:1px solid #e3e3e3;border-radius:var(--raio);overflow:hidden}
+.fundo-claro .beneficio{background:var(--branco)}
+.card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.card-corpo{padding:1.3rem}
+.beneficio{padding:1.5rem;border-top:3px solid var(--ouro)}
+.lista-pilares,.lista-simples,.lista-links{display:grid;gap:.7rem}
+.lista-links{list-style:none;padding:0}
+.lista-links a{color:var(--grafite);text-decoration-color:var(--ouro);text-underline-offset:4px}
+.nota{font-size:.92rem;color:#555;margin-top:1rem}
+.destaque{border-left:4px solid var(--ouro);padding:1rem 1.3rem;background:var(--claro)}
+.fundo-claro .destaque{background:var(--branco)}
+/* tabelas */
+.tabela-rolagem{overflow-x:auto;border-radius:var(--raio);border:1px solid #ddd}
+table{width:100%;border-collapse:collapse;background:var(--branco);min-width:520px}
+th{background:var(--grafite);color:var(--branco);text-align:left;font-weight:600}
+th,td{padding:.9rem 1.1rem;border-bottom:1px solid #e6e6e6}
+tbody tr:nth-child(even){background:#fafafa}
+/* formulário */
+.formulario{display:grid;gap:1.1rem;max-width:620px}
+.campo{display:grid;gap:.35rem}
+label{font-weight:600}
+input,textarea{width:100%;padding:.85rem 1rem;border:1px solid #c9c9c9;border-radius:var(--raio);font:inherit;background:var(--branco)}
+input:focus,textarea:focus{border-color:var(--ouro);outline:none;box-shadow:0 0 0 3px rgba(197,164,109,.3)}
+.erro{color:#a12626;font-weight:600}
+/* rodapé */
+.rodape{background:var(--grafite);color:var(--medio);padding-top:3.5rem}
+.rodape h3{color:var(--branco);font-size:1.2rem}
+.rodape ul{list-style:none;padding:0}
+.rodape a{text-decoration:none}
+.rodape a:hover{color:var(--ouro)}
+.rodape-grade{display:grid;grid-template-columns:1.2fr 1fr 1.4fr;gap:2rem}
+.rodape .logo{color:var(--branco)}
+.copy{text-align:center;border-top:1px solid #2c2c2c;margin:2.5rem 0 0;padding:1.2rem;max-width:none;font-size:.9rem}
+/* responsivo */
+@media(max-width:860px){
+.grade-3,.duas-colunas,.rodape-grade{grid-template-columns:1fr}
+.menu-botao{display:block}
+.menu{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--grafite);padding:.5rem 4%}
+.menu.aberto{display:flex}
+.menu a{display:inline-block;padding:.9rem 0}
+.secao{padding:3rem 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
